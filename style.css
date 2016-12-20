@@ -24,6 +24,8 @@ header, footer {
   display: inherit;
   flex: 0 0 64px;
 
+  z-index: 1;
+
   color: var(--light);
   font-size: 18pt;
   font-weight: 300;
