@@ -4,63 +4,112 @@
     --secondary: #0a7e8c;
     --complementary: #d71868;
     --dark: #001c3d;
-}
 
-:root, body {
-  height: 100%;
-}
-
-body, header, header > button, header > h1, footer > span, section {
-  display: flex;
+    height: 100%
 }
 
 body {
-  margin: 0;
+  display: flex;
   flex-direction: column;
+
+  margin: inherit;
+  height: inherit;
 
   color: var(--dark);
   background: var(--light);
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', sans-serif;
+  font-family: -apple-system, sans-serif;
 }
 
 header, footer {
+  display: inherit;
   flex: 0 0 64px;
 
   color: var(--light);
   background: var(--primary);
+
+  font-size: 18pt;
+  font-weight: 300;
 }
 
 footer {
   background: var(--dark);
 }
 
-  header > button, header > h1, footer > span {
+  button, h1, footer span {
+    display: inherit;
     box-sizing: border-box;
-    margin: 0;
+    margin: inherit;
     padding: 16px;
-    align-items: center;
+    border: inherit;
 
-    font-size: 18pt;
-    font-weight: 300;
+    align-items: center;
+    justify-content: center;
+
+    font-size: inherit;
+    font-weight: inherit;
   }
 
-  header > button {
-    border: 0;
-
-    color: var(--light);
+  button {
+    color: inherit;
     background: var(--secondary);
+
+    font-weight: 500;
+  }
+
+  button:hover {
+    background: var(--complementary);
   }
 
 section {
+  --navbar-width: 196px;
+
+  position: relative;
+  display: inherit;
   flex: 1 0 0;
 }
 
-  section > nav {
-    display: none;
+  nav {
+    position: absolute;
+    overflow-y: auto;
+
+    left: calc(-1 * var(--navbar-width));
+
+    width: var(--navbar-width);
+    height: 100%;
+
+    color: var(--light);
+    background: var(--secondary);
+
+    transition: left 0.5s;
   }
 
-  section > main {
-    overflow-y: auto;
+  nav.displayed {
+    left: 0
+  }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      margin: inherit;
+      padding: inherit;
+    }
+
+      li {
+        display: inherit;
+        flex: 0 0 48px;
+
+        padding-left: 16px;
+
+        align-items: center;
+      }
+
+      li:hover {
+        background: var(--primary);
+      }
+
+  main {
     padding: 0 16px;
+    overflow-y: auto;
   }
